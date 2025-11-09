@@ -111,13 +111,15 @@ you can still perform **geological data–driven mineral formation analysis** us
    BASE_URL = "your_base_url"
    ```
 
-You can execute the minimal configuration of MMAgent using only the embedded geological reasoning module.  
+You can execute the minimal configuration of MMQAsimple using only the embedded geological reasoning module.  
 Set the following feature variables in your configuration:
 
 ```python
 FEATURES_FOR_QUERY = ["epoch", "hirise", "crater", "valley", "mineral"]
 INCLUDE_FOR_GEO_SUMMARY = ["epoch", "hirise_all", "craters", "mineral_data"]
+python MMQAsimple.py
 ```
+
 > **Note:**  
 > This simplified version does not rely on the knowledge graph or text corpus.
 > The reasoning process is based solely on geological data, and thus its traceability, comprehensiveness, and answer reliability are considerably lower than those of the full version. It is provided for reference only and intended for lightweight testing or demonstration purposes.
