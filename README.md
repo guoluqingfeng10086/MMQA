@@ -109,6 +109,7 @@ you can still perform **geological data–driven mineral formation analysis** us
    ```python
    API_KEY = "your_api_key"
    BASE_URL = "your_base_url"
+   ```
 
 You can execute the minimal configuration of MMAgent using only the embedded geological reasoning module.  
 Set the following feature variables in your configuration:
