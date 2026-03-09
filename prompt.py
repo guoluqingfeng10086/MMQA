@@ -20,11 +20,9 @@ You are a Mars expert analyzing mineral formation.
 
 ### Step 1: Knowledge Graph Paths and Triples (General expert knowledge)
 {path_lines}
-
-### Step 1.5: Extra 1-hop Knowledge
 {extra_1hop_lines}
 
-### Step 2: Regional Geological Context (Specific geological background)
+### Step 2: Regional Geological Context
 {geo_context}
 {top_texts}
 
@@ -36,7 +34,6 @@ Please follow the reasoning chain below:
 2. Geological Evolution Inferences** — Infer possible geological processes and the evolution of geological environments based on the background,the summarize them in separate items.
 3. Considering the  geological reasoning above, summarize the relevant key mineral formation mechanisms from the graphical reasoning chain and an additional 1-hop knowledge in detail.
 4. Summarize and infer the possible genesis of the minerals in a well-structured bullet-point format(You may also draw on generally accepted domain knowledge to round out the explanation when appropriate).
-Your reasoning mainly refers to the semantic logic of the graph paths!!!!!
 While geological evolution should be the primary basis for your reasoning, you may also reference relevant knowledge graph information as supporting evidence.
 """
 
@@ -92,4 +89,58 @@ Please follow the reasoning chain below:
 1. Geological Background Summary — Summarize the key geological and environmental features of the area.
 2. Geological Evolution Inferences — Infer possible geological processes and the evolution of geological environments based on the background.
 3. Mineral Formation Inference — Based on the geological reasoning above and the mineral types ({minerals}), infer the possible genesis of the minerals in a well-structured bullet-point format. You may also reference generally accepted domain knowledge.
+"""
+
+
+
+
+# -------------Additional Prompts---------------
+LLM_filter = """
+
+You are a planetary geology expert responsible for filtering knowledge-graph reasoning paths.
+
+### Question
+{question}
+
+### Geological Background
+{geo_context}
+
+### Retrieved Knowledge Graph Paths
+{paths}
+### Instructions
+Evaluate each path and remove those that are unlikely to contribute useful geological reasoning.
+
+Use the following considerations:
+1. Geological consistency  
+The path should not contradict the geological background or well-established geological knowledge.
+2. Semantic relevance  
+The path should contain information that can help understand or answer the query.
+3. Informational contribution  
+Prefer paths that provide useful or complementary knowledge rather than repeating trivial or redundant information.
+4. Scientific plausibility  
+Relations and statements in the path should be geologically reasonable.
+
+### Output
+Return the remaining non-redundant knowledge-graph paths that are relevant and geologically plausible.  Keep the original path format unchanged.  Only remove paths that are clearly redundant or irrelevant.
+
+"""
+
+LLM_combine_PEOMPT  = """
+You are a planetary geology expert. Combine the user query, the available geological data (if available), and the retrieved entity-related text segments into a geological knowledge context.
+
+### Question
+{question}
+
+### Geological Data
+{geo_data}
+
+### Entity-related Text Segments
+{text_segments}
+
+### Instructions
+1. Keep the query and geological data unchanged.
+2. Condense the entity-related text segments according to the query and geological data, removing redundant or irrelevant information while preserving geological consistency.
+
+### Output
+A merged geological knowledge context.
 """
