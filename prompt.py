@@ -26,7 +26,6 @@ You are a Mars expert analyzing mineral formation.
 {geo_context}
 {top_texts}
 
-While geological evolution should be the primary basis for your reasoning, you may also reference relevant knowledge graph information as supporting evidence.
 Please first synthesize the relevant information from the Regional Geological Context,Knowledge Graph Paths and Extra 1-hop Knowledge,then answer the question in detail.
 ### Instructions
 Please follow the reasoning chain below:
@@ -56,7 +55,7 @@ Retrieved Literature Paragraphs
 {texts}
 
 Please first synthesize the relevant information from the knowledge graph paths and retrieved literature paragraphs, then answer the question in detail(use bullet points).
-Your reasoning mainly refers to the semantic logic of the Knowledge graph paths!!!!!You may also draw on generally accepted domain knowledge to round out the explanation when appropriate.
+Your reasoning mainly refers to the semantic logic of the Knowledge graph paths. You may also draw on generally accepted domain knowledge to round out the explanation when appropriate.
 Ensure that the output content is comprehensive, logically coherent, and detailed, and list the answer in separate items.
 """
 
