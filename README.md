@@ -18,7 +18,7 @@ MMQA is built around two complementary data resources:
 From these resources, we construct the **Martian Mineral Knowledge Graph (MMKG)**. The graph stores mineral entities, geological environments, formation processes, relations, descriptions, and provenance evidence. The extraction and fusion workflow is summarized below.
 
 <p align="center">
-  <img src="./FIG/Fig3_01.png" alt="MMKG construction workflow" width="92%">
+  <img src="./FIG/Fig3_01.png" alt="MMKG construction workflow" width="100%">
 </p>
 
 The MMQA corpus also integrates multi-source geological data, including raster maps, vector maps, tabular geomorphological records, and text evidence. These data provide the local geological context used during formation analysis.
@@ -65,24 +65,26 @@ The code is organized around a compact reasoning pipeline:
 
 ## Quick Start
 
-1. Install the required Python packages for LLM access, embedding retrieval, geospatial processing, and local data loading.
+To get started with MMQA, prepare the local project folder, configure the OpenAI-compatible API endpoint, and place the required geological data, MMKG files, text corpus, and embedding indexes in the expected local paths.
 
-2. Configure API access in [`proxy_config.py`](./proxy_config.py):
+```bash
+cd MMQA
+```
+
+Configure API access in [`proxy_config.py`](./proxy_config.py):
 
 ```python
 API_KEY = "your_api_key"
 BASE_URL = "your_base_url"
 ```
 
-3. Place the required MMKG, text corpus, embedding indexes, and geological datasets in the expected local paths. The included [`geodata`](./geodata) directory can be used as the starting location for geological data.
-
-4. Run the full MMQA pipeline:
+Run the full MMQA pipeline with graph-path reasoning and text retrieval:
 
 ```bash
 python MMAgentV2.py
 ```
 
-5. For a minimal demonstration without the knowledge graph and text corpus, run:
+For a minimal demonstration without the knowledge graph and text corpus, run the geological-context-only version:
 
 ```bash
 python MMQAsimple.py
