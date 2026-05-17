@@ -4,16 +4,20 @@
   <img src="./FIG/FIG4_01.png" alt="MMQA framework" width="100%">
 </p>
 
-MMQA is a Mars mineral question answering system for interpretable geological reasoning. It combines a Martian Mineral Knowledge Graph (MMKG), multi-source geological datasets, a Mars mineral text corpus, and large language models to answer factual, reasoning, and mineral-formation questions.
+---
 
-The accepted version of MMQA focuses on reasoning guided by knowledge graph paths. Given a user query, the system extracts key entities and coordinates, retrieves local geological context and relevant literature evidence, searches graph paths under geological constraints, and generates a traceable answer with supporting reasoning paths and references.
+## Overview
+
+MMQA has been accepted by **IEEE Transactions on Geoscience and Remote Sensing (TGRS), 2026**. It is a Mars mineral question answering system that combines the Martian Mineral Knowledge Graph (MMKG), multi-source geological datasets, a Mars mineral text corpus, and large language models for interpretable geological reasoning.
+
+Given a query, MMQA extracts key entities and coordinates, retrieves geological context and literature evidence, searches graph paths under geological constraints, and generates traceable answers with supporting reasoning paths and references.
 
 ## Data and Knowledge Graph
 
 MMQA is built around two complementary data resources:
 
 - **M200**: a curated bibliography of 200 mineral-formation-related papers. The source list is provided in [`geodata/MM200.csv`](./geodata/MM200.csv).
-- **M2000**: a larger Mars mineral text corpus containing 2,000+ papers and reports collected for retrieval, evidence grounding, and corpus-scale knowledge extraction.
+- **M2000**: a larger Mars mineral text corpus containing 2,000+ papers and reports collected for retrieval, evidence grounding, and corpus-scale knowledge extraction. The source list is provided in [`geodata/MM2000.csv`](./geodata/MM2000.csv).
 
 From these resources, we construct the **Martian Mineral Knowledge Graph (MMKG)**. The graph stores mineral entities, geological environments, formation processes, relations, descriptions, and provenance evidence. The extraction and fusion workflow is summarized below.
 
