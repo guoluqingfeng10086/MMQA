@@ -21,7 +21,7 @@ MMQA is built around two complementary data resources:
 
 From these resources, we construct the **Martian Mineral Knowledge Graph (MMKG)**. The graph stores mineral entities, geological environments, formation processes, relations, descriptions, and provenance evidence. The extraction and fusion workflow is summarized below.
 
-The ontology design is provided in [`FIG/Fig2_01.png`](./FIG/Fig2_01.png), and the knowledge extraction prompt template is provided in [`kg_extract_prompts.py`](./kg_extract_prompts.py).
+The ontology design is provided in [`FIG/Fig2_01.png`](./FIG/Fig2_01.png), and the knowledge extraction prompt template is provided in [`kg_extract_prompts.txt`](./kg_extract_prompts.txt).
 
 <p align="center">
   <img src="./FIG/Fig3_01.png" alt="MMKG construction workflow" width="100%">
@@ -67,7 +67,7 @@ The code is organized around a compact reasoning pipeline:
 - [`path_selector.py`](./path_selector.py), [`link_scorer.py`](./link_scorer.py), [`embedding_utils.py`](./embedding_utils.py): embedding-based path scoring and representation utilities.
 - [`geo_context_loader.py`](./geo_context_loader.py), [`geo_context_summary.py`](./geo_context_summary.py): loading and summarizing multi-source geological data.
 - [`intent_classifier.py`](./intent_classifier.py), [`answer_generator.py`](./answer_generator.py), [`prompt.py`](./prompt.py): intent detection, prompt templates, and final response generation.
-- [`kg_extract_prompts.py`](./kg_extract_prompts.py): prompt template used for Martian mineral knowledge graph extraction.
+- [`kg_extract_prompts.txt`](./kg_extract_prompts.txt): prompt template used for Martian mineral knowledge graph extraction.
 - [`proxy_config.py`](./proxy_config.py): API key and OpenAI-compatible endpoint configuration.
 
 ## Quick Start
