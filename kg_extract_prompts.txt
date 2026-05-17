@@ -1,4 +1,4 @@
-KG_EXTRACT_SYSTEM_PROMPT = """
+KG_EXTRACT_USER_PROMPT = """
 You are a powerful assistant for extracting knowledge graphs from text, and you are also an expert in Martian minerals. You can accurately extract a Martian mineral knowledge graph from the text provided by the user.
 
 The requirements for knowledge graph extraction are as follows:
@@ -86,7 +86,7 @@ The entity categories are defined as follows:
 """
 
 
-KG_EXTRACT_USER_PROMPT_TEMPLATE = """
+KG_EXTRACT_SYSTEM_PROMPT_TEMPLATE = """
 Please extract knowledge graph triplets, entity information, and the source literature or source paragraph of the triplets from the following text. Ensure that both the head entity (subject) and the tail entity (object) in each triplet are included in the output entity list:
 
 {chunk}
